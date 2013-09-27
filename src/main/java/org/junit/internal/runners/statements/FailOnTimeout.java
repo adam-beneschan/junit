@@ -105,9 +105,9 @@ public class FailOnTimeout extends Statement {
     		threads = new Thread[enumSize];
     		enumCount = fThreadGroup.enumerate (threads);
     		if (enumCount < enumSize) break;
-                // if there are too many threads to fit into the array, enumerate's result
-                // is >= the array's length; therefore we can't trust that it returned all
-                // the threads.  Try again.
+            // if there are too many threads to fit into the array, enumerate's result
+            // is >= the array's length; therefore we can't trust that it returned all
+            // the threads.  Try again.
     		enumSize += 100;
     		if (++loopCount >= 5) return null;
     		// threads are proliferating too fast for us.  Bail before we get into 
